@@ -61,10 +61,33 @@
 
   4. `npx shadcn-ui@latest init`
 
+- Prettier
+  1. `npm install --save-dev --save-exact prettier`
+  2. `node --eval "fs.writeFileSync('.prettierrc','{}\n')"`
+  3. Criar um arquivo chamado `.prettierignore` e adicionar o seguinte código:
+  ```
+  # Ignore artifacts:
+  build
+  coverage
+  ```
+  4. `npm install --save-dev eslint-config-prettier`
+  5. Adicionar ao arquivo `eslintrc.cjs`:
+  ```javascript
+  {
+    "extends": [
+      // ...
+      "prettier"
+    ]
+  }
+  ```
+
+6. Instalar extensão do Prettier no VS Code: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+7. Instalar extensão do ESLint no VS Code: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+
 ### Instruções de uso
 
 1. Clone o repositório: `git clone https://github.com/username/my-shows.git` 📥
 2. Navegue até o diretório do projeto: `cd my-shows` 📂
 3. Instale as dependências: `npm install` ⚙️
-4. Inicie o servidor de desenvolvimento: `npm start` 🚀
-5. Acesse a aplicação no navegador: `http://localhost:3000` 🌐
+4. Inicie o servidor de desenvolvimento: `npm run dev` 🚀
+5. Acesse a aplicação no navegador: `http://localhost:5173` 🌐
