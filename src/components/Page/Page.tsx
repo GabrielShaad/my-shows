@@ -1,18 +1,19 @@
-import { Container, Typography, styled } from '@mui/material'
+import { Container } from '@mui/material'
 import Header from '@/components/Header'
 
-const Wrapper = styled('main')({
-    position: 'relative',
-    width: '100vw',
-    height: '100svh',
-})
+import { ReactNode } from 'react'
+import { Wrapper } from './Page.styles'
 
-function Page() {
+interface PageProps {
+    children: ReactNode
+}
+
+function Page({ children }: PageProps) {
     return (
         <Wrapper>
             <Header />
             <Container maxWidth="lg" sx={{ paddingTop: '80px' }}>
-                <Typography>Nossa página</Typography>
+                {children}
             </Container>
         </Wrapper>
     )

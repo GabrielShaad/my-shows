@@ -6,6 +6,7 @@ import '@fontsource/comfortaa/400.css'
 import '@fontsource/comfortaa/500.css'
 import '@fontsource/comfortaa/600.css'
 import '@fontsource/comfortaa/700.css'
+import Search from './components/Search'
 
 const theme = createTheme({
     typography: {
@@ -17,7 +18,9 @@ function App() {
     return (
         <CssBaseline>
             <ThemeProvider theme={theme}>
-                <Page />
+                <Page>
+                    <Search />
+                </Page>
             </ThemeProvider>
         </CssBaseline>
     )
