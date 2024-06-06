@@ -21,14 +21,15 @@
 -   **Material UI**
 
     1. `npm install @mui/material @emotion/react @emotion/styled`
-    2. `npm install @fontsource/roboto`
+    2. `npm install @fontsource/comfortaa`
     3. Adicione o seguinte código no arquivo App.tsx:
 
     ```javascript
-    import '@fontsource/roboto/300.css'
-    import '@fontsource/roboto/400.css'
-    import '@fontsource/roboto/500.css'
-    import '@fontsource/roboto/700.css'
+    import '@fontsource/comfortaa/300.css'
+    import '@fontsource/comfortaa/400.css'
+    import '@fontsource/comfortaa/500.css'
+    import '@fontsource/comfortaa/600.css'
+    import '@fontsource/comfortaa/700.css'
     ```
 
     4. `npm install @mui/icons-material`
