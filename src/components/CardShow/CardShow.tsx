@@ -5,20 +5,18 @@ import {
     CardActionArea,
     CardActions,
     CardContent,
-    CardMedia,
     Typography,
 } from '@mui/material'
-import { Description } from './CardShow.styles'
+import { Show } from '@/types/Shows'
+import { Cover, Description } from './CardShow.styles'
 
-function CardShow() {
+function CardShow(show: Show) {
+    const { image, name, rating, summary } = show
+
     return (
         <Card elevation={5}>
             <CardActionArea>
-                <CardMedia
-                    component="img"
-                    alt="Show Image"
-                    image="https://static.tvmaze.com/uploads/images/medium_portrait/517/1293999.jpg"
-                />
+                <Cover component="img" image={image?.original} />
 
                 <CardContent>
                     <Box display="flex" flexDirection="column" gap={2}>
@@ -27,24 +25,20 @@ function CardShow() {
                             component="h3"
                             fontWeight="bold"
                         >
-                            The Boys
+                            {name}
                         </Typography>
 
-                        <Description variant="body2">
-                            In a world where superheroes embrace the darker side
-                            of their massive celebrity and fame,
-                            \u003Cb\u003EThe Boys\u003C/b\u003E centres on a
-                            group of vigilantes known informally as \"The
-                            Boys,\" who set out to take down corrupt superheroes
-                            with no more than blue collar grit and a willingness
-                            to fight dirty.
-                        </Description>
+                        <Box height="100px">
+                            <Description variant="body2">
+                                {summary?.replace(/<[^>]*>?/gm, '')}
+                            </Description>
+                        </Box>
                     </Box>
                 </CardContent>
                 <CardActions>
                     <StarRounded />
                     <Typography variant="h6" component="p" fontWeight="bold">
-                        8.7
+                        {rating.average ?? 'N/A'}
                     </Typography>
                 </CardActions>
             </CardActionArea>

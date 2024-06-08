@@ -1,7 +1,22 @@
 import { Grid } from '@mui/material'
-import CardShow from '../CardShow'
+import CardShow from '@/components/CardShow'
+import { useQuery } from '@tanstack/react-query'
+import { getShows } from '@/api'
+import SkeletonCard from '../SkeletonCard'
 
-function Shows() {
+interface ShowsProps {
+    search: string
+}
+
+function Shows({ search }: ShowsProps) {
+    const { data, isPending } = useQuery({
+        queryKey: ['shows', { search }],
+        queryFn: async () => {
+            const data = await getShows(search)
+            return data
+        },
+    })
+
     return (
         <section>
             <Grid
@@ -11,9 +26,19 @@ function Shows() {
                 alignItems="center"
                 justifyContent="center"
             >
-                {Array.from(Array(60)).map((_, index) => (
+                {isPending && (
+                    <>
+                        {[1, 2, 3, 4].map((item) => (
+                            <Grid item xs={12} sm={6} md={4} lg={3} key={item}>
+                                <SkeletonCard />
+                            </Grid>
+                        ))}
+                    </>
+                )}
+
+                {data?.map((item, index) => (
                     <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-                        <CardShow />
+                        <CardShow {...item.show} />
                     </Grid>
                 ))}
             </Grid>

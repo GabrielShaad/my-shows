@@ -8,6 +8,7 @@ import '@fontsource/comfortaa/600.css'
 import '@fontsource/comfortaa/700.css'
 import Search from './components/Search'
 import Shows from './components/Shows'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const theme = createTheme({
     typography: {
@@ -15,14 +16,18 @@ const theme = createTheme({
     },
 })
 
+const queryClient = new QueryClient()
+
 function App() {
     return (
         <CssBaseline>
             <ThemeProvider theme={theme}>
-                <Page>
-                    <Search />
-                    <Shows />
-                </Page>
+                <QueryClientProvider client={queryClient}>
+                    <Page>
+                        <Search />
+                        <Shows search="boys" />
+                    </Page>
+                </QueryClientProvider>
             </ThemeProvider>
         </CssBaseline>
     )
