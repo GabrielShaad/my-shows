@@ -12,7 +12,18 @@ function Page({ children }: PageProps) {
     return (
         <Wrapper>
             <Header />
-            <Container maxWidth="lg" sx={{ paddingTop: '80px' }}>
+            <Container
+                maxWidth="lg"
+                sx={{
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'stretch',
+                    justifyContent: 'space-around',
+                    paddingTop: '80px',
+                    gap: '1rem',
+                }}
+            >
                 {children}
             </Container>
         </Wrapper>
