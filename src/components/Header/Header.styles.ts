@@ -11,7 +11,7 @@ const Wrapper = styled('header')({
     padding: '1rem',
     borderBottom: '1px solid gray',
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
-    backdropFilter: 'blur(3px)',
+    backdropFilter: 'blur(8px)',
 
     '& svg': {
         fontSize: '2rem',

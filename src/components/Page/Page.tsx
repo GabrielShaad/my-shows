@@ -15,12 +15,11 @@ function Page({ children }: PageProps) {
             <Container
                 maxWidth="lg"
                 sx={{
-                    height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'stretch',
                     justifyContent: 'space-around',
-                    paddingTop: '80px',
+                    padding: '80px 0',
                     gap: '1rem',
                 }}
             >
