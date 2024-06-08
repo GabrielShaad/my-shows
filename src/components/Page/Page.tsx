@@ -19,7 +19,7 @@ function Page({ children }: PageProps) {
                     flexDirection: 'column',
                     alignItems: 'stretch',
                     justifyContent: 'space-around',
-                    padding: '80px 0',
+                    paddingTop: '80px',
                     gap: '1rem',
                 }}
             >

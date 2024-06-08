@@ -3,8 +3,10 @@ import { OutlinedInput, styled } from '@mui/material'
 const SearchSection = styled('section')({
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
     padding: '1rem',
+    gap: '1rem',
+    flexWrap: 'wrap',
     width: '100%',
 })
 
